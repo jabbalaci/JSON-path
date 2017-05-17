@@ -37,11 +37,11 @@ def traverse(path, obj):
         for e in li:
             cnt += 1
             if isinstance(e, dict):
-                traverse(path + f'[{cnt}]', e)
+                traverse("{path}[{cnt}]".format(path=path, cnt=cnt), e)
             elif isinstance(e, list):
-                traverse(path + f'[{cnt}]', e)
+                traverse("{path}[{cnt}]".format(path=path, cnt=cnt), e)
             else:
-                print(path + f'[{cnt}]', "=>", e)
+                print("{path}[{cnt}] => {e}".format(path=path, cnt=cnt, e=e))
 
 
 def read_file(fpath):
