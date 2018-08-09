@@ -3,8 +3,8 @@ JSON Path
 
 Find the path of a key / value in a JSON hierarchy *easily*.
 
-Rationale
----------
+Motivation
+----------
 
 When working with big and nested JSON files, sometimes
 it's very difficult to figure out the path of a key. You
