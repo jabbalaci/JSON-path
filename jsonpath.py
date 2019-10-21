@@ -16,9 +16,10 @@ Author:
 
 import json
 import sys
+from typing import Dict, List, Union, Any
 
 
-def traverse(path, obj):
+def traverse(path: str, obj: Union[Dict, List]) -> None:
     """
     Traverse the object recursively and print every path / value pairs.
     """
@@ -44,26 +45,26 @@ def traverse(path, obj):
                 print("{path}[{cnt}] => {e}".format(path=path, cnt=cnt, e=e))
 
 
-def read_file(fpath):
+def read_file(fpath: str) -> Dict:
     """
     Read the JSON file and return its content as a Python data structure.
     """
     with open(fpath) as f:
-        return json.load(f)
+        return json.load(f)    # type: ignore
 
 
-def process(fname):
+def process(fname: str) -> None:
     """
     Process the given JSON file.
     """
-    d = read_file(fname)
+    d: Dict = read_file(fname)
     traverse("root", d)
 
 ##############################################################################
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
-        print("Usage: json_path <input.json>")
+        print("Usage: jsonpath <input.json>")
         sys.exit(1)
     #
     fname = sys.argv[1]

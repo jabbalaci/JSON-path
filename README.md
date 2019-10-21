@@ -42,7 +42,7 @@ JSON Path will traverse it recursively and print every
 path / value pair:
 
 ```bash
-$ ./json_path.py sample.json
+$ ./jsonpath.py samples/short.json
 root.a => 1
 root.b.c => 2
 root.b.friends[0].best => Alice
@@ -59,7 +59,7 @@ The idea is to combine its usage with the Unix command
 leads to Bob?
 
 ```bash
-$ ./json_path.py sample.json | grep Bob
+$ ./jsonpath.py samples/short.json | grep Bob
 root.b.friends[1].second => Bob
 ```
 
@@ -72,6 +72,31 @@ Then simply paste it in your application:
 'Bob'
 >>>
 ```
+
+Installation
+============
+
+The program was tested under Linux. It only uses the standard
+library, so you only need to create a virtual environment
+if you need a development version. With the development version
+you can do type checking and you can create a standalone executable.
+
+Install the development version:
+--------------------------------
+
+```
+$ pipenv install --dev
+```
+
+Create an EXE
+-------------
+
+If you want a standalone executable, then issue the command
+
+    $ pynt exe
+
+which will create the executable file `jsonpath` in the
+`dist/` folder. (Note: for this to work, install the dev. version.)
 
 Related Work
 ------------
