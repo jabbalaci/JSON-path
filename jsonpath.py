@@ -23,26 +23,14 @@ def traverse(path: str, obj: Union[Dict, List]) -> None:
     """
     Traverse the object recursively and print every path / value pairs.
     """
-    cnt = -1
-    if isinstance(obj, dict):
-        d = obj
-        for k, v in d.items():
-            if isinstance(v, dict):
-                traverse(path + "." + k, v)
-            elif isinstance(v, list):
-                traverse(path + "." + k, v)
-            else:
-                print(path + "." + k, "=>", v)
     if isinstance(obj, list):
-        li = obj
-        for e in li:
-            cnt += 1
-            if isinstance(e, dict):
-                traverse("{path}[{cnt}]".format(path=path, cnt=cnt), e)
-            elif isinstance(e, list):
-                traverse("{path}[{cnt}]".format(path=path, cnt=cnt), e)
-            else:
-                print("{path}[{cnt}] => {e}".format(path=path, cnt=cnt, e=e))
+        for i, subnode in enumerate(obj):
+            traverse(path + f'[{i!r}]', subnode)
+    elif isinstance(obj, dict):
+        for k, v in obj.items():
+            traverse(path + f'[{k!r}]', v)
+    else:
+        print(path + ' => ' + f'{obj!r}')
 
 
 def read_file(fpath: str) -> Dict:
