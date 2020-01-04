@@ -11,17 +11,17 @@ Inspired by:
 * http://chris.photobooks.com/json/default.htm (in-browser visualization)
 
 Author:
-* Laszlo Szathmary, alias Jabba Laci, 2017, jabba.laci@gmail.com
+* Laszlo Szathmary, alias Jabba Laci, 2017--2020, jabba.laci@gmail.com
 """
 
 import json
 import sys
-from typing import Dict, List, Union, Any
+from typing import Any, Dict, List, Union
 
 
-def traverse(path: str, obj: Union[Dict, List]) -> None:
+def traverse(path: str, obj: Any) -> None:
     """
-    Traverse the object recursively and print every path / value pairs.
+    Traverse the object recursively and print every path / value pair.
     """
     if isinstance(obj, list):
         for i, subnode in enumerate(obj):

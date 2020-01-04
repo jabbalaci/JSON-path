@@ -43,15 +43,15 @@ path / value pair:
 
 ```bash
 $ ./jsonpath.py samples/short.json
-root.a => 1
-root.b.c => 2
-root.b.friends[0].best => Alice
-root.b.friends[1].second => Bob
-root.b.friends[2][0] => 5
-root.b.friends[2][1] => 6
-root.b.friends[2][2] => 7
-root.b.friends[3][0].one => 1
-root.b.friends[3][1].two => 2
+root['a'] => 1
+root['b']['c'] => 2
+root['b']['friends'][0]['best'] => 'Alice'
+root['b']['friends'][1]['second'] => 'Bob'
+root['b']['friends'][2][0] => 5
+root['b']['friends'][2][1] => 6
+root['b']['friends'][2][2] => 7
+root['b']['friends'][3][0]['one'] => 1
+root['b']['friends'][3][1]['two'] => 2
 ```
 
 The idea is to combine its usage with the Unix command
@@ -59,8 +59,8 @@ The idea is to combine its usage with the Unix command
 leads to Bob?
 
 ```bash
-$ ./jsonpath.py samples/short.json | grep Bob
-root.b.friends[1].second => Bob
+$ ./jsonpath.py samples/short.json | grep -i bob
+root['b']['friends'][1]['second'] => 'Bob'
 ```
 
 Then simply paste it in your application:
