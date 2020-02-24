@@ -85,7 +85,7 @@ Install the development version:
 --------------------------------
 
 ```
-$ pipenv install --dev
+$ poetry install
 ```
 
 Create an EXE
