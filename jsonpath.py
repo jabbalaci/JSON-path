@@ -37,7 +37,7 @@ def read_file(fpath: str) -> Dict:
     """
     Read the JSON file and return its content as a Python data structure.
     """
-    with open(fpath) as f:
+    with open(fpath, encoding='utf8') as f:
         return json.load(f)    # type: ignore
 
 
