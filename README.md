@@ -105,6 +105,8 @@ Related Works
 webapp. Somewhat hidden feature, but if you click on an item in the table,
 you'll get its path on the left side. I wanted something similar in the command line. Once I
 was working with sensitive data, and I didn't want to paste them in a third-party webapp.
+* It seems Chris Nielsen's webapp is gone. However, someone saved it and it can be
+found here: https://github.com/2x2xplz/json_visualizer . Online version: https://altearius.github.io/tools/json/index.html .
 * JSON Crack ([webpage](https://jsoncrack.com/), [GitHub link](https://github.com/AykutSarac/jsoncrack.com)).
 JSON Crack is a tool that generates graph diagrams from JSON objects.
 It has an [online interface](https://jsoncrack.com/editor), but you can also install it
