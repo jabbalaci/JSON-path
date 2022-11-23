@@ -98,10 +98,14 @@ If you want a standalone executable, then issue the command
 which will create the executable file `jsonpath` in the
 `dist/` folder. (Note: for this to work, install the dev. version.)
 
-Related Work
-------------
+Related Works
+-------------
 
-See Chris Nielsen's excellent [JSON Visualization](http://chris.photobooks.com/json/default.htm)
+* See Chris Nielsen's excellent [JSON Visualization](http://chris.photobooks.com/json/default.htm)
 webapp. Somewhat hidden feature, but if you click on an item in the table,
 you'll get its path on the left side. I wanted something similar in the command line. Once I
 was working with sensitive data, and I didn't want to paste them in a third-party webapp.
+* JSON Crack ([webpage](https://jsoncrack.com/), [GitHub link](https://github.com/AykutSarac/jsoncrack.com)).
+JSON Crack is a tool that generates graph diagrams from JSON objects.
+It has an [online interface](https://jsoncrack.com/editor), but you can also install it
+as a VS Code extension.
