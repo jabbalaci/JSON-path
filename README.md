@@ -101,6 +101,7 @@ which will create the executable file `jsonpath` in the
 Related Works
 -------------
 
+* [go-jsonpath](https://github.com/jabbalaci/go-jsonpath): a Go implementation of this project
 * See Chris Nielsen's excellent [JSON Visualization](http://chris.photobooks.com/json/default.htm)
 webapp. Somewhat hidden feature, but if you click on an item in the table,
 you'll get its path on the left side. I wanted something similar in the command line. Once I
