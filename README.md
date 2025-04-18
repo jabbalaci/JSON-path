@@ -73,30 +73,10 @@ Then simply paste it in your application:
 >>>
 ```
 
-Installation
-============
+Requirements
+------------
 
-The program was tested under Linux. It only uses the standard
-library, so you only need to create a virtual environment
-if you need a development version. With the development version
-you can do type checking and you can create a standalone executable.
-
-Install the development version:
---------------------------------
-
-```
-$ poetry install
-```
-
-Create an EXE
--------------
-
-If you want a standalone executable, then issue the command
-
-    $ pynt exe
-
-which will create the executable file `jsonpath` in the
-`dist/` folder. (Note: for this to work, install the dev. version.)
+The project has no external dependencies. It only relies on the standard library.
 
 Related Works
 -------------
