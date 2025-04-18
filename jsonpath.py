@@ -11,12 +11,12 @@ Inspired by:
 * http://chris.photobooks.com/json/default.htm (in-browser visualization)
 
 Author:
-* Laszlo Szathmary, alias Jabba Laci, 2017--2020, jabba.laci@gmail.com
+* Laszlo Szathmary (jabba.laci@gmail.com), 2017--2025
 """
 
 import json
 import sys
-from typing import Any, Dict, List, Union
+from typing import Any
 
 
 def traverse(path: str, obj: Any) -> None:
@@ -25,28 +25,29 @@ def traverse(path: str, obj: Any) -> None:
     """
     if isinstance(obj, list):
         for i, subnode in enumerate(obj):
-            traverse(path + f'[{i!r}]', subnode)
+            traverse(path + f"[{i!r}]", subnode)
     elif isinstance(obj, dict):
         for k, v in obj.items():
-            traverse(path + f'[{k!r}]', v)
+            traverse(path + f"[{k!r}]", v)
     else:
-        print(path + ' => ' + f'{obj!r}')
+        print(path + " => " + f"{obj!r}")
 
 
-def read_file(fpath: str) -> Dict:
+def read_file(fpath: str) -> dict:
     """
     Read the JSON file and return its content as a Python data structure.
     """
-    with open(fpath, encoding='utf8') as f:
-        return json.load(f)    # type: ignore
+    with open(fpath, encoding="utf8") as f:
+        return json.load(f)  # type: ignore
 
 
 def process(fname: str) -> None:
     """
     Process the given JSON file.
     """
-    d: Dict = read_file(fname)
+    d: dict = read_file(fname)
     traverse("root", d)
+
 
 ##############################################################################
 
